@@ -131,7 +131,7 @@
 		$image = get_post_thumbnail_id( $post->ID );
 		print_r( $image );
 		echo '<br /><br />';
-		$image = wp_get_attachment_image_src( $image, $size );
+		$image = wp_get_attachment_image_src( $image );
 		print_r( $image );
 		echo '<br /><br />';
 		$image = $image[0];
