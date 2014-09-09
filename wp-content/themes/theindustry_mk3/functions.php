@@ -129,10 +129,16 @@
 		$cdn = 'http://d24njcbunk2gp2.cloudfront.net';
 
 		$image = get_post_thumbnail_id( $post->ID );
+		print_r( $image );
+		echo '<br /><br />';
 		$image = wp_get_attachment_image_src( $image, $size );
+		print_r( $image );
+		echo '<br /><br />';
 		$image = $image[0];
+		print_r( $image );
+		echo '<br /><br />';
 
-		$image = str_replace($GLOBALS['site_url'], $cdn, $image);
+//		$image = str_replace($GLOBALS['site_url'], $cdn, $image);
 /*
 		if( ! $image ) {
 			$image = $GLOBALS['template_url'] . '/assets/img/default.jpg';
