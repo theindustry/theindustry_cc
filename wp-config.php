@@ -16,15 +16,18 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('WP_CACHE', true); //Added by WP-Cache Manager
-define( 'WPCACHEHOME', '/Users/jordankoschei/Sites/theindustry_mk3_v2/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
-define('DB_NAME', 'theindustry_mk3_v2');
+// define('WP_CACHE', true); //Added by WP-Cache Manager
+// define( 'WPCACHEHOME', '/Users/jordankoschei/Sites/theindustry_mk3_v2/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
+// define('DB_NAME', 'theindustry_mk3_v2');
+define('DB_NAME', 'industry_wp_database');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+// define('DB_USER', 'root');
+define('DB_USER', 'indust_user');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+// define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'VDKgGVFXih4aU2R7783B6');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -74,7 +77,8 @@ $table_prefix  = 'ti_';
  * in their development environments.
  */
 define( 'WP_DEBUG', FALSE === strpos( $_SERVER['REQUEST_URI'], '/wp-admin/' ) );
-define( 'WP_MEMORY_LIMIT', '96M' );
+//define( 'WP_MEMORY_LIMIT', '96M' );
+define( 'WP_MEMORY_LIMIT', '32M' );
 
 define( 'UPLOADS', ''.'assets' );
 
