@@ -30,8 +30,6 @@ define( 'WP_DEBUG', FALSE );
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-// define('WP_CACHE', true); //Added by WP-Cache Manager
-// define( 'WPCACHEHOME', '/Users/jordankoschei/Sites/theindustry_mk3_v2/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 
 /** MySQL database username */
 
@@ -97,3 +95,7 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+
+define('WP_CACHE', true); //Added by WP-Cache Manager
+define( 'WPCACHEHOME', ABSPATH . 'wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
