@@ -133,6 +133,7 @@
 		$image = $image[0];
 
 		$image = str_replace($GLOBALS['site_url'], $cdn, $image);
+		$image = str_replace('http://http://', 'http://', $image);
 
 		if( ! $image ) {
 			$image = $GLOBALS['template_url'] . '/assets/img/default.jpg';
