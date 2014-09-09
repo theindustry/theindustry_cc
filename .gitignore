@@ -101,8 +101,8 @@ wp-content/*
 # ADVANCED OPTION (disabled by default)
 # ignore everything in the "themes" directory,
 # except the themes you specify
-wp-content/themes/*
-!wp-content/themes/theindustry_mk3_v2/
+# wp-content/themes/*
+# !wp-content/themes/theindustry_mk3_v2/
  
 # ignore specific themes
 # wp-content/themes/twentyten/

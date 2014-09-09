@@ -1,0 +1,19 @@
+.nojs {
+	#header-search-trigger,
+	.hero-image-navigation,
+	.hero-navigation-buttons,
+	#gridlist-chooser,
+	#gridlist-footer { display: none; }
+}
+
+.nojs {
+	.hero-images-wrapper li {
+		display: none;
+
+		&.current {
+			display: inline-block;
+
+			div { background-image: inherit; }
+		}
+	}
+}

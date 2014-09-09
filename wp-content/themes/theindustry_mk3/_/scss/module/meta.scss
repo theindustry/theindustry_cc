@@ -1,0 +1,25 @@
+.article-meta {
+	display: inline-block;
+	font-family: $proxima;
+	width: 100%;
+}
+
+.meta-category {
+	display: inline-block;
+	float: left;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.meta-date {
+	color: #d2d7d9;
+	display: inline-block;
+	float: left;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: .025em;
+	margin-right: 18px;
+	text-transform: uppercase;
+	white-space: nowrap;
+}

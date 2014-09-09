@@ -1,0 +1,26 @@
+html {
+	background-color: #fff;
+	height: 100%;
+}
+body {
+	color: $text;
+	display: inline-block;
+	font-family: $georgia;
+	font-size: 16px;
+	height: 100%;
+	line-height: 26px;
+	margin: 0;
+	min-width: 320px;
+	text-align: center;
+	width: 100%;
+	@include font-feature-settings('kern');
+//	-webkit-font-smoothing: antialiased;
+
+	@media (min-width: 1024px) {
+		font-size: 17px;
+		line-height: 27px;
+		padding-top: 60px;
+	}
+}
+
+body.search { background-color: $bgrDk; }
