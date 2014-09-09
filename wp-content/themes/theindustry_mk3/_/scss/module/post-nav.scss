@@ -1,0 +1,96 @@
+.post-nav {
+	background: #eee;
+	display: inline-block;
+	float: left;
+	padding: 1em 2em;
+	width: 100%;
+
+	@media (min-width: 1024px) {
+		padding: 1em 66px;
+	}
+}
+
+.post-nav-prev,
+.post-nav-next {
+	display: inline-block;
+	width: 50%;
+
+	a {
+		@include transition(opacity .125s ease);
+		@include hide-text(50px, 50px);
+		opacity: .5;
+
+		&:hover,
+		&:focus { opacity: 1; }
+
+		@media (min-width: 768px) {
+			font-family: $proxima;
+			font-weight: 600;
+			line-height: 50px;
+			height: 50px;
+			text-align: right;
+			text-decoration: none;
+			text-indent: 0;
+			width: auto;
+		}
+
+		&:before {
+			border: 1px #d6d6d6 solid;
+			border-radius: 50%;
+			content: '';
+			display: inline-block;
+			height: 48px;
+			width: 48px;
+		}
+	}
+}
+.post-nav-prev {
+	float: left;
+
+	a {
+		float: left;
+		text-align: left;
+
+		&:before {
+			@include scaled-image('arrow-left.png', 6px 12px);
+			background-position-x: 47%;
+			float: left;
+			margin-right: 16px;
+		}
+	}
+}
+.post-nav-next {
+	float: right;
+
+	a {
+		float: right;
+		text-align: right;
+
+		&:before {
+			@include scaled-image('arrow-right.png', 6px 12px);
+			background-position-x: 53%;
+			float: right;
+			margin-left: 16px;
+		}
+	}
+}
+/*
+.post-nav-prev a {
+	@include scaled-image('arrow-left.png', 14px);
+	float: left;
+
+	@media (min-width: 768px) {
+		background-position: left center;
+		padding-left: 24px;
+	}
+}
+.post-nav-next a {
+	@include scaled-image('arrow-right.png', 14px);
+	float: right;
+
+	@media (min-width: 768px) {
+		background-position: right center;
+		padding-right: 24px;
+	}
+}
+*/
