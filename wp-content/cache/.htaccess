@@ -1,4 +1,3 @@
-
 # BEGIN supercache
 <IfModule mod_mime.c>
   <FilesMatch "\.html\.gz$">
@@ -19,5 +18,4 @@
   ExpiresActive On
   ExpiresByType text/html A3
 </IfModule>
-
 # END supercache
