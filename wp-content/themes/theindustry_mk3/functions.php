@@ -130,7 +130,6 @@
 
 		$image = get_post_thumbnail_id( $post->ID );
 		$image = wp_get_attachment_image_src( $image, $size );
-		print_r( $image );
 		$image = $image[0];
 
 		$image = str_replace($GLOBALS['site_url'], $cdn, $image);
