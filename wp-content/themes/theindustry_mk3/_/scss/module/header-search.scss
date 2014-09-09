@@ -44,7 +44,7 @@
 	left: 1em;
 	font-family: $open;
 	font-size: 16px;
-	font-weight: 300;
+	font-weight: normal;
 	line-height: 24px;
 	margin: 0;
 	outline: none;
@@ -73,7 +73,7 @@
 	&:focus { opacity: .75; }
 
 	@media (min-width: 1024px) {
-		width: 60px;
+		width: 24px;
 		height: 60px;
 		right: 60px;
 	}

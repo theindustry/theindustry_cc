@@ -19,6 +19,12 @@ if( have_posts() ) {
 			<header id="single-header">
 			<h1 class="single-title"><?php the_title(); ?></h1>
 
+			<div class="article-meta single-article-meta">
+				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" class="single-meta-author"><?php the_author(); ?></a>
+				<span class="single-meta-date meta-date"><?php the_date(); ?></span>
+			</div>
+
+				<?php /* ?>
 				<div class="article-meta single-article-meta">
 					<div class="article-meta single-meta">
 						<!--
@@ -30,13 +36,16 @@ if( have_posts() ) {
 
 				<div class="article-author single-article-author">
 					<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" class="article-author-name"><?php the_author(); ?></a>
+					
 					<span class="article-author-role"><?php echo get_the_author_role(); ?></span>
 					<ul class="author-links">
 						<?php if( get_the_author_meta('user_url') ) : ?><li><a href="<?php echo get_the_author_meta( 'user_url' ); ?>" class="author-site"><?php echo get_the_author_meta( 'user_url' ); ?></a></li><?php endif; ?>
 						<?php if( get_the_author_meta('twitter') ) : ?><li><a href="https://twitter.com/<?php echo get_the_author_meta( 'twitter' ); ?>" class="author-twitter">@<?php echo get_the_author_meta( 'twitter' ); ?></a></li><?php endif; ?>
 						<?php if( get_the_author_meta('dribbble') ) : ?><li><a href="<?php echo get_the_author_meta( 'dribbble' ); ?>" class="author-dribbble"><?php the_author(); ?> on Dribbble</a></li><?php endif; ?>
 					</ul>
+
 				</div>
+				<?php */ ?>
 			</header>
 
 			<div id="content" class="inner">
