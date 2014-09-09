@@ -14,6 +14,8 @@
 
 	<script type="text/javascript" src="//use.typekit.net/gqy7mxh.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<meta name="bitly-verification" content="c799ac985001"/>
 </head>
 <body <?php body_class(); ?>>
 
