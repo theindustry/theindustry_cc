@@ -148,3 +148,34 @@
 		}
 	}
 }
+
+#header-social {
+	@include transition(opacity .125s ease);
+	display: none;
+	float: right;
+	height: 60px;
+	margin: 0 40px 0 0;
+	padding: 20px 0 20px;
+	opacity: 0;
+
+	&.js-visible { opacity: .5; }
+	&:hover { opacity: 1; }
+
+	@media (min-width: 1024px) { display: inline-block; }
+}
+#twitter-widget-0 {
+	@include transition(opacity .25s ease);
+	margin: 0 !important;
+	opacity: 0;
+
+	&[data-twttr-rendered=true] {
+		opacity: 1;
+	}
+}
+.fb-like,
+.fb-share-button {
+	margin: 0 0 0 10px !important;
+
+	& > span { float: left; }
+}
+.fb-share-button { margin-left: -10px !important; }

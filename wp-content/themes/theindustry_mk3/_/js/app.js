@@ -216,6 +216,47 @@ gridlistLoadmore.onclick = function() {
 
 };
 
+// Let's get the social count
+/*
+	if( window.XMLHttpRequest ) {
+		httpRequest = new XMLHttpRequest();
+	} else if( window.ActiveXObject ) {
+		try {
+			httpRequest = new ActiveXObject( 'Msxml2.XMLHTTP' );
+		}
+		catch( e ) {
+			try {
+				httpRequest = new ActiveXObject( 'Microsoft.XMLHTTP' );
+			}
+			catch( e ) {}
+		}
+	}
+
+	if( ! httpRequest ) {
+		console.log( 'Cannot create XMLHTTP instance. Bailing.' );
+	}
+
+	httpRequest.onreadystatechange = function() {
+		if( httpRequest.readyState == 4 ) {
+			var response = JSON.parse( httpRequest.responseText );
+			document.getElementById('twitter-count').innerHTML = response.twitter;
+			document.getElementById('facebook-count').innerHTML = response.facebook;
+		}
+	};
+
+	httpRequest.open( 'POST', ajax.ajaxurl );
+	httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	httpRequest.send( 'action=socialcount&url='+ajax.url+'&nonce='+ajax.nonce );
+*/
+
+
+// Make HEADER SOCIAL visible
+window.fbAsyncInit = function() {
+	FB.Event.subscribe('xfbml.render', function(response) {
+		document.getElementById('header-social').classList.add('js-visible');
+	});
+};
+
 
 // FUNCTIONS
 function supports_html5_storage() {

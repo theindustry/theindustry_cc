@@ -14,8 +14,6 @@
 
 	<script type="text/javascript" src="//use.typekit.net/gqy7mxh.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
-	<meta name="bitly-verification" content="c799ac985001"/>
 </head>
 <body <?php body_class(); ?>>
 
@@ -25,7 +23,14 @@
 
 		<button id="header-search-trigger">Search</button>
 
-		<div class="header-social">
+		<div id="header-social">
+			<?php create_twitter_link(); ?>
+			<?php create_facebook_link(); ?>
+
+			<?php /* ?>
+			<a href="<?php echo get_twitter_link(); ?>" target="_blank">Tweet <span id="twitter-count"></span></a>
+			<a href="<?php echo get_facebook_link(); ?>" target="_blank" id="facebook-link">Like <span id="facebook-count"></span></a>
+			<?php */ ?>
 		</div>
 
 		<form role="search" method="get" id="search-form" action="<?php echo $GLOBALS['site_url'] . '/'; ?>">

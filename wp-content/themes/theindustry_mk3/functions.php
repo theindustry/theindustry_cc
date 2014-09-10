@@ -203,9 +203,144 @@
 	}
 
 
-add_filter( 'the_content', function( $content ) {
-	$content = preg_replace(array('{<a(.*?)[^>]*><img}', '{ wp-image-[0-9]*" /></a>}'), array('<img','" />'), $content );
-	$content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-	$content = str_replace( '<p></p>', '', $content );
-	return $content;
-});
+// Filter the CONTENT
+	add_filter( 'the_content', function( $content ) {
+		$content = preg_replace(array('{<a(.*?)[^>]*><img}', '{ wp-image-[0-9]*" /></a>}'), array('<img','" />'), $content );
+		$content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+		$content = str_replace( '<p></p>', '', $content );
+		return $content;
+	});
+
+
+// Generate the TWITTER LINK
+	function get_twitter_link() {
+		if( is_single() ) {
+			$link = get_permalink();
+			$shortlink = get_bitly_link();
+			$title = get_the_title();
+		} else {
+			$link = $GLOBALS['site_url'];
+			$shortlink = $GLOBALS['site_url'];
+			$title = 'The Industry';
+		}
+
+		$link = urlencode($link);
+		$shortlink = urlencode($shortlink);
+
+		$result = 'https://twitter.com/share';
+		$result .= '?url='.$shortlink;
+		$result .= '&text='.$title;
+		$result .= '&via=industry';
+		$result .= '&related=industry';
+		if( is_single() && get_the_author_meta( 'twitter' ) ) {
+			$result .= ','.get_the_author_meta( 'twitter' );
+		}
+		$result .= '&counturl='.$link;
+		$result .= '&count=horizontal';
+
+		return $result;
+	}
+
+	function get_facebook_link() {
+		if( is_single() ) {
+			$link = get_permalink();
+			$link = urlencode( $link );
+			$result = 'http://www.facebook.com/plugins/like.php?href=' . $link . '&action=like';
+
+		} else {
+			$link = urlencode( 'https://www.facebook.com/theindustry.cc' );
+			$result = 'http://www.facebook.com/plugins/like.php?href=' . $link . '&action=like';
+		}
+
+		return $result;
+	}
+
+	function get_bitly_link() { return get_permalink(); }
+
+
+// Get TWITTER COUNT
+	add_action( 'wp_ajax_socialcount', 'get_social_count' );
+	add_action( 'wp_ajax_nopriv_socialcount', 'get_social_count' );
+	function get_social_count() {
+		check_ajax_referer( 'nonce-special-string', 'nonce' );
+		$url = sanitize_text_field( $_POST['url'] );
+		echo json_encode(array(
+			'twitter' => get_twitter_count( $url ),
+			'facebook' => get_facebook_count( $url )
+		));
+		die();
+	}
+
+	function get_twitter_count( $link ) {
+		if( ! is_single() ) {
+			$link = $GLOBALS['site_url'];
+		}
+
+		$curl = curl_init();
+		curl_setopt_array($curl, array(
+			CURLOPT_HTTPGET => true,
+	        CURLOPT_URL => 'http://cdn.api.twitter.com/1/urls/count.json?url='.$link,
+        	CURLOPT_TIMEOUT => 5,
+	        CURLOPT_HEADER => false,
+	        CURLOPT_RETURNTRANSFER => true,
+	        CURLOPT_SSL_VERIFYPEER => false,
+	        CURLOPT_FOLLOWLOCATION => true
+		));
+		$raw = curl_exec($curl);
+		curl_close( $curl );
+
+		$raw = json_decode( $raw );
+		if( isset( $raw->count ) ) {
+			return $raw->count;
+		} else { return false; }
+	}
+
+	function get_facebook_count( $link ) {
+		if( ! is_single() ) {
+			$link = 'https://www.facebook.com/theindustry.cc';
+		}
+
+		$curl = curl_init();
+		curl_setopt_array($curl, array(
+			CURLOPT_HTTPGET => true,
+	        CURLOPT_URL => 'https://graph.facebook.com/fql?q=' . urlencode('SELECT like_count, total_count, share_count, click_count, comment_count FROM link_stat WHERE url = "'.$link.'"'),
+        	CURLOPT_TIMEOUT => 5,
+	        CURLOPT_HEADER => false,
+	        CURLOPT_RETURNTRANSFER => true,
+	        CURLOPT_SSL_VERIFYPEER => false,
+	        CURLOPT_FOLLOWLOCATION => true
+		));
+		$raw = curl_exec($curl);
+		curl_close( $curl );
+
+		$raw = json_decode( $raw );
+		if( isset( $raw->data[0]->total_count ) ) {
+			return $raw->data[0]->total_count;
+		} else { return false; }
+	}
+
+
+	function create_twitter_link() {
+		if( is_single() ) {
+			$link = get_permalink();
+			$shortlink = get_bitly_link();
+			$title = get_the_title();
+
+			$related = 'industry';
+			if( is_single() && get_the_author_meta( 'twitter' ) ) {
+				$related .= ','.get_the_author_meta( 'twitter' );
+			}
+
+			echo '<a href="https://twitter.com/share" class="twitter-share-button" data-text="'.$title.'" data-via="industry" data-related="'.$related.'" data-counturl="'.$link.'" data-url="'.$shortlink.'">Tweet</a>';
+		} else {
+			echo '<a href="https://twitter.com/industry" class="twitter-follow-button" data-show-count="true">@industry</a>';
+		}
+	}
+
+	function create_facebook_link() {
+		if( is_single() ) {
+			echo '<div class="fb-share-button" data-layout="button_count"></div>';
+		} else {
+			echo '<div class="fb-like" data-href="https://www.facebook.com/theindustry.cc" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>';
+		}
+	}
