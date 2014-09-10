@@ -19,6 +19,12 @@ if( have_posts() ) {
 			<header id="single-header">
 			<h1 class="single-title"><?php the_title(); ?></h1>
 
+			<?php
+			if( 1 === 0 ) {
+				echo '<span class="single-series"></span>';
+			}
+			?>
+
 			<div class="article-meta single-article-meta">
 				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" class="single-meta-author"><?php the_author(); ?></a>
 				<span class="single-meta-date meta-date"><?php the_date(); ?></span>

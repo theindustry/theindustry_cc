@@ -344,3 +344,28 @@
 			echo '<div class="fb-like" data-href="https://www.facebook.com/theindustry.cc" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>';
 		}
 	}
+
+
+// Create SERIES TAXONOMY
+	add_action( 'init', function() {
+		$labels = array(
+			'name'					=> 'Series',
+			'singular_name'			=> 'Series'
+		);
+	
+		$args = array(
+			'labels'            => $labels,
+			'public'            => false,
+			'show_in_nav_menus' => true,
+			'show_admin_column' => false,
+			'hierarchical'      => true,
+			'show_tagcloud'     => true,
+			'show_ui'           => true,
+			'query_var'         => true,
+			'rewrite'           => true,
+			'query_var'         => true,
+			'capabilities'      => array(),
+		);
+	
+		register_taxonomy( 'series', array( 'post' ), $args );
+	});
