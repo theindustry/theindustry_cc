@@ -9,7 +9,8 @@
 			$posts = get_posts(array(
 				'numberposts' => 1
 			));
-			$category = get_category( wp_get_post_categories( $posts[0]->ID )[0] );
+			$category = wp_get_post_categories( $posts[0]->ID );
+			$category = get_category( $category[0] );
 			$category_order = array();
 			switch( $category->slug ) {
 				case 'news':
