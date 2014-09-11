@@ -368,4 +368,6 @@
 		);
 	
 		register_taxonomy( 'series', array( 'post' ), $args );
+
+		echo 'test';
 	});
