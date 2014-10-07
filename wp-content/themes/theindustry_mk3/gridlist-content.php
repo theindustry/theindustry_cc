@@ -35,7 +35,7 @@ foreach( $posts as $i => $post ) {
 	elseif( $i == 6 ) { $size .= '2by2'; }
 	else { $size .= '1by1'; }
 	?>
-	<a href="<?php the_permalink(); ?>" class="gridlist-article">
+<a href="<?php the_permalink(); ?>" class="gridlist-article">
 		<div style="background-image: url(<?php echo get_post_image_url($post, $size); ?>)" class="gridlist-article-image gridlist-article-image-nonretina"></div>
 		<div style="background-image: url(<?php echo get_post_image_url($post, $size . '-retina'); ?>)" class="gridlist-article-image gridlist-article-image-retina"></div>
 		<div class="gridlist-article-inner">
