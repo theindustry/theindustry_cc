@@ -23,7 +23,8 @@ while( have_rows('featured_posts', 'options') ) {
 			<li class="hero-image-item<?php echo $current; ?>"><div class="hero-image" id="hero-image-<?php echo $i; ?>"></div></li>
 			<?php
 		}
-?></ul>
+?>
+</ul>
 
 	<?php if( count($featured) > 1 ) : ?>
 <div class="hero-image-navigation">
