@@ -22,8 +22,7 @@ while( have_rows('featured_posts', 'options') ) {
 			
 			<?php
 		}
-		?>
-	</ul>
+		?></ul>
 
 	<?php if( count($featured) > 1 ) : ?>
 <div class="hero-image-navigation">
