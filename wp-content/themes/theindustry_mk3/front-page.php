@@ -46,7 +46,7 @@
 								
 								$size = 'gridlist-thumb-1by1';
 								?>
-	<li class="main-group-item">
+<li class="main-group-item">
 									<div style="background-image: url(<?php echo get_post_image_url($post, $size); ?>);" class="main-group-item-image main-group-item-image-nonretina"></div>
 									<div style="background-image: url(<?php echo get_post_image_url($post, $size . '-retina'); ?>);" class="main-group-item-image main-group-item-image-retina"></div>
 									<a href="<?php the_permalink(); ?>">
@@ -96,7 +96,7 @@
 									$title = get_field('alt_title');
 								} else { $title = get_the_title(); }
 								?>
-								<li class="main-group-item">
+<li class="main-group-item">
 									<div style="background-image: url(<?php echo get_post_image_url($post, $size); ?>);" class="main-group-item-image main-group-item-image-nonretina"></div>
 									<div style="background-image: url(<?php echo get_post_image_url($post, $size . '-retina'); ?>);" class="main-group-item-image main-group-item-image-retina"></div>
 									<a href="<?php the_permalink(); ?>">
@@ -129,7 +129,7 @@
 								
 								$size = 'gridlist-thumb-2by2';
 								?>
-								<li class="main-group-item">
+<li class="main-group-item">
 									<div style="background-image: url(<?php echo get_post_image_url($post, $size); ?>);" class="main-group-item-image main-group-item-image-nonretina"></div>
 									<div style="background-image: url(<?php echo get_post_image_url($post, $size . '-retina'); ?>);" class="main-group-item-image main-group-item-image-retina"></div>
 									<a href="<?php the_permalink(); ?>">
@@ -179,7 +179,7 @@
 									$title = get_field('alt_title');
 								} else { $title = get_the_title(); }
 								?>
-								<li class="main-group-item">
+<li class="main-group-item">
 									<div style="background-image: url(<?php echo get_post_image_url($post, $size); ?>);" class="main-group-item-image main-group-item-image-nonretina"></div>
 									<div style="background-image: url(<?php echo get_post_image_url($post, $size . '-retina'); ?>);" class="main-group-item-image main-group-item-image-retina"></div>
 									<a href="<?php the_permalink(); ?>">
