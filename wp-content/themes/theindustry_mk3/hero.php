@@ -8,10 +8,12 @@ while( have_rows('featured_posts', 'options') ) {
 
 <div class="hero-images fxArchive">
 	<ul class="hero-images-wrapper">
+	
 		<!--
 		What follows is a hackish solution to a convoluted problem.
 		TO DO: Refactor to use srcset and ditch <style> in the body
 		-->
+		
 		<?php
 		foreach( $featured as $i => $id ) {
 			if( $i == 0 ) { $current = ' current'; }
@@ -22,7 +24,7 @@ while( have_rows('featured_posts', 'options') ) {
 
 			<?php
 		}
-		?></ul>
+?></ul>
 
 	<?php if( count($featured) > 1 ) : ?>
 <div class="hero-image-navigation">
