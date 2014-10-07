@@ -19,7 +19,7 @@ while( have_rows('featured_posts', 'options') ) {
 			?>
 <style>#hero-image-<?php echo $i; ?> { background-image: url(<?php echo get_post_image_url(get_post($id), 'featured-small'); ?>); }@media (min-width: 480px) { #hero-image-<?php echo $i; ?> { background-image: url(<?php echo get_post_image_url(get_post($id), 'featured-medium'); ?>); } }@media (min-width: 1024px) { #hero-image-<?php echo $i; ?> { background-image: url(<?php echo get_post_image_url(get_post($id), 'featured-large'); ?>); } }@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { #hero-image-<?php echo $i; ?> { background-image: url(<?php echo get_post_image_url(get_post($id), 'featured-small-retina'); ?>); } }@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 480px), (min-resolution: 192dpi) and (min-width: 480px) { #hero-image-<?php echo $i; ?> { background-image: url(<?php echo get_post_image_url(get_post($id), 'featured-medium-retina'); ?>); } }@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1024px), (min-resolution: 192dpi) and (min-width: 1024px) { #hero-image-<?php echo $i; ?> { background-image: url(<?php echo get_post_image_url(get_post($id), 'fullsize'); ?>); } }</style>
 			<li class="hero-image-item<?php echo $current; ?>"><div class="hero-image" id="hero-image-<?php echo $i; ?>"></div></li>
-			
+
 			<?php
 		}
 		?></ul>
