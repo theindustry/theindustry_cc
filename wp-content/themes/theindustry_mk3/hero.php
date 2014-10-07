@@ -44,7 +44,7 @@ while( have_rows('featured_posts', 'options') ) {
 			$category_name = $category->cat_name;
 			if( $category_name != 'News' ) { $category_name = trim($category_name, 's'); }
 			?>
-			<div class="hero-item">
+<div class="hero-item">
 				<div class="hero-info">
 					<div class="hero-meta article-meta">
 						<span class="hero-meta-category meta-category <?php echo 'cat-' . $category->slug; ?>">Featured <?php echo $category_name; ?></span>
