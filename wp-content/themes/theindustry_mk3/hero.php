@@ -45,14 +45,14 @@ while( have_rows('featured_posts', 'options') ) {
 			if( $category_name != 'News' ) { $category_name = trim($category_name, 's'); }
 			?>
 <div class="hero-item">
-				<div class="hero-info">
-					<div class="hero-meta article-meta">
-						<span class="hero-meta-category meta-category <?php echo 'cat-' . $category->slug; ?>">Featured <?php echo $category_name; ?></span>
-						<span class="hero-meta-date meta-date"><?php echo get_the_date( '', $id ); ?></span>
-					</div>
-					<h1 class="hero-title"><a href="<?php echo get_permalink( $id ); ?>"><?php echo get_the_title( $id ); ?></a></h1>
+			<div class="hero-info">
+				<div class="hero-meta article-meta">
+					<span class="hero-meta-category meta-category <?php echo 'cat-' . $category->slug; ?>">Featured <?php echo $category_name; ?></span>
+					<span class="hero-meta-date meta-date"><?php echo get_the_date( '', $id ); ?></span>
 				</div>
+				<h1 class="hero-title"><a href="<?php echo get_permalink( $id ); ?>"><?php echo get_the_title( $id ); ?></a></h1>
 			</div>
+		</div>
 			<?php
 		}
 		?>
@@ -60,9 +60,9 @@ while( have_rows('featured_posts', 'options') ) {
 
 	<div class="hero-navigation">
 		<?php if( count($featured) > 1 ) : ?>
-		<div class="hero-navigation-buttons">
-			<button id="hero-prev">Previous</button>
-			<button id="hero-next">Next</button>
+	<div class="hero-navigation-buttons">
+		<button id="hero-prev">Previous</button>
+		<button id="hero-next">Next</button>
 		</div>
 		<?php endif; ?>
 	</div>
