@@ -1,6 +1,6 @@
 	<footer id="footer">
 		<div class="inner">
-			<span class="copyright">&copy; 2014 Industry Media, Corp.</span>
+			<span class="copyright">&copy; 2015 Industry Media, Corp.</span>
 			<ul class="social">
 				<li><a href="https://www.facebook.com/theindustry.cc" class="social-facebook">The Industry on Facebook</a></li>
 				<li><a href="https://twitter.com/industry" class="social-twitter">The Industry on Facebook</a></li>
