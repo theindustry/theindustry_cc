@@ -8,7 +8,6 @@ class Jetpack_Client_Server {
 
 	function authorize() {
 		$data = stripslashes_deep( $_GET );
-		$args = array();
 		$redirect = isset( $data['redirect'] ) ? esc_url_raw( (string) $data['redirect'] ) : '';
 
 		$jetpack_unique_connection = Jetpack_Options::get_option( 'unique_connection' );
@@ -16,8 +15,9 @@ class Jetpack_Client_Server {
 		if ( ! $jetpack_unique_connection ) {
 			// jetpack_unique_connection option has never been set
 			$jetpack_unique_connection = array(
-				'connected' => 0,
-				'disconnected' => 0,
+				'connected'     => 0,
+				'disconnected'  => 0,
+				'version'       => '3.6.1'
 			);
 
 			update_option( 'jetpack_unique_connection', $jetpack_unique_connection );
@@ -116,6 +116,7 @@ class Jetpack_Client_Server {
 			}
 
 			// Sync all registers options and constants
+			/** This action is documented in class.jetpack.php */
 			do_action( 'jetpack_sync_all_registered_options' );
 
 			// Start nonce cleaner
