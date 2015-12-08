@@ -30,6 +30,8 @@
 
 			$category_order = array('opinions', 'interviews');
 
+			echo '<!-- test -->';
+
 			foreach( $category_order as $cat_group ) {
 								if( $cat_group == 'opinions' ) {
 									?>
