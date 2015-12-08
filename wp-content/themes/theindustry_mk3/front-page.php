@@ -24,7 +24,7 @@
 					break;
 				case 'interviews':
 				default:
-					$category_order = array('news', 'interviews', 'reviews', 'opinions');
+					$category_order = array('opinions', 'interviews', 'reviews', 'news');
 					break;
 			}
 
