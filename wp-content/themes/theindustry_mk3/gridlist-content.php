@@ -10,6 +10,10 @@ if( is_search() ) { $options['s'] = get_query_var( 's' ); }
 if( is_category() ) { $options['category'] = get_query_var( 'cat' ); }
 if( is_author() ) { $options['author'] = get_query_var( 'author' ); }
 
+if( ! is_category() && ! is_author() && ! is_search() ) {
+	$options['category'] = array('category_name' => 'opinions,interviews');
+}
+
 if( isset( $_POST['options'] ) ) {
 	$query_options = json_decode( stripslashes( $_POST['options'] ) );
 
