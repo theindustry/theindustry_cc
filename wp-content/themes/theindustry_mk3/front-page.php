@@ -28,6 +28,8 @@
 					break;
 			}
 
+			$category_order = array('opinions', 'interviews');
+
 			foreach( $category_order as $cat_group ) {
 								if( $cat_group == 'opinions' ) {
 									?>
