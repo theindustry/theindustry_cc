@@ -10,4 +10,7 @@
   opacity: 1 !important;
 }
 
-#header-social { opacity: 1 !important; }
+#header-social {
+  display: inline-block !important;
+  opacity: 1 !important;
+}
