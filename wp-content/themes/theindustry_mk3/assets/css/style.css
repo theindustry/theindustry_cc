@@ -5,3 +5,7 @@
   line-height: 30px;
   -webkit-font-smoothing: antialiased;
 }
+
+#twitter-widget-0 {
+  opacity: 1 !important;
+}
