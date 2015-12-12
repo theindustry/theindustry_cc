@@ -14,3 +14,11 @@
   display: inline-block !important;
   opacity: 1 !important;
 }
+
+@media (max-width: 1024px) {
+  #header-social {
+    height: 56px !important;
+    padding: 18px 0 !important;
+    margin-right: 0 !important;
+  }
+}
