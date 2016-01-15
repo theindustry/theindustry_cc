@@ -8,23 +8,6 @@
 	-webkit-font-smoothing: antialiased;
 	z-index: 1;
 
-	@media (min-width: 768px) {
-		// &:before {
-		// 	background-color: #b8bfc2;
-		// 	content: '';
-		// 	position: absolute;
-		// 	// @include scaled-image('header-bgr.png', auto 56px);
-		// 	// background-position: right;
-		// 	left: 0;
-		// 	top: 0;
-		// 	bottom: 0;
-		// 	// width: 184px;
-		// 	width: 174px;
-		// 	z-index: 0;
-		// 	opacity: .125;
-		// }
-	}
-
 	@media (min-width: 1024px) {
 		box-shadow: 0 1px 1px transparentize(#000, .9);
 		height: 60px;
@@ -34,13 +17,11 @@
 		left: 0;
 		right: 0;
 		z-index: 99999;
+		@include transition(top .25s ease);
 
-		// &:before {
-		// 	// @include scaled-image('header-bgr.png', auto 60px);
-		// 	// background-position: right;
-		// 	// width: 232px;
-		// 	width: 220px;
-		// }
+		&.headroom--unpinned {
+			top: -60px;
+		}
 	}
 }
 
