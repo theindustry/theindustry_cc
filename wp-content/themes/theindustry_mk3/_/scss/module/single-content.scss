@@ -20,6 +20,12 @@
 	}
 }
 
+#content p, #content ol, #content ul {
+  font-size: 18px;
+  line-height: 30px;
+  -webkit-font-smoothing: antialiased;
+}
+
 #content img {
 	margin-bottom: 2em;
 	max-width: 640px;

@@ -10,7 +10,7 @@
 	padding: 0 2em;
 	pointer-events: none;
 	position: absolute;
-	right: 0;
+	right: 120px;
 	top: 0;
 	width: 100%;
 	z-index: -1;
@@ -73,8 +73,8 @@
 	&:focus { opacity: .75; }
 
 	@media (min-width: 1024px) {
-		width: 24px;
+		width: 60px;
 		height: 60px;
-		right: 60px;
+		right: 120px;
 	}
 }

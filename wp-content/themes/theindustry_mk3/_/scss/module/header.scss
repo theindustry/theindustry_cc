@@ -1,53 +1,87 @@
 #header {
 	background-color: #fff;
+	box-shadow: 0 1px 2px transparentize(#000, .85);
 	display: inline-block;
 	float: left;
 	position: relative;
 	width: 100%;
 	-webkit-font-smoothing: antialiased;
+	z-index: 1;
+
+	@media (min-width: 768px) {
+		&:before {
+			background-color: #b8bfc2;
+			content: '';
+			position: absolute;
+			// @include scaled-image('header-bgr.png', auto 56px);
+			// background-position: right;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			// width: 184px;
+			width: 174px;
+			z-index: 0;
+			opacity: .125;
+		}
+	}
 
 	@media (min-width: 1024px) {
 		box-shadow: 0 1px 1px transparentize(#000, .9);
 		height: 60px;
-		padding: 0 60px;
+		padding: 0 0 0 60px;
 		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
 		z-index: 99999;
+
+		&:before {
+			// @include scaled-image('header-bgr.png', auto 60px);
+			// background-position: right;
+			// width: 232px;
+			width: 220px;
+		}
 	}
 }
 
 #logo {
 	@include transition(opacity .125s ease);
-	@include hide-text(24px, 24px);
+	// @include hide-text(24px, 24px);
 	@include scaled-image('logo.png', 24px);
+	background-position: left;
 	float: left;
 	margin: 1em;
+	min-width: 24px;
+	min-height: 24px;
+	position: relative;
+	z-index: 2;
 
 	&:hover,
-	&:focus { opacity: .5; }
+	&:focus {
+		opacity: .5;
+	}
 
 	@media (min-width: 1024px) {
 		margin: 18px 0;
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+
+			#logotype { opacity: .5; }
+		}
 	}
 }
+#logotype {
+	@include hide-text(108px, 24px);
+	@include scaled-image('logotype.png', 108px);
+	margin-left: 32px;
+	position: relative;
+	top: -1px;
+	float: left;
+	@include transition(opacity .125s ease);
 
-#header-podcast {
-	@include transition(background .125s ease);
-	@include hide-text(56px, 56px);
-	@include scaled-image('podcast.png', 24px);
-	background-color: #a1aab3;
-	float: right;
-	padding: 1em;
-
-	&:hover,
-	&:focus { background-color: darken(#a1aab3, 10%); }
-
-	@media (min-width: 1024px) {
-		width: 60px;
-		height: 60px;
-	}
+	@media (max-width: 768px) { display: none; }
 }
 
 #header-search-trigger {
@@ -65,8 +99,68 @@
 	&:focus { opacity: .5; }
 
 	@media (min-width: 1024px) {
-		width: 24px;
+		width: 60px;
 		height: 60px;
+	}
+}
+
+.header-social {
+	float: right;
+}
+.header-social-item {
+	display: inline-block;
+	background-color: #eee;
+	height: 56px;
+	width: 56px;
+	float: left;
+	@include transition(all .125s ease);
+	
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+	text-decoration: none;
+	font-family: $proxima;
+	// text-transform: uppercase;
+	font-weight: 600;
+	padding-top: 28px;
+
+	&:hover,
+	&:focus {
+		color: #fff;
+		background-position: center 25% !important;
+	}
+
+	@media (min-width: 768px) {
+		padding-top: 32px;
+	}
+
+	@media (min-width: 1024px) {
+		width: 60px;
+		height: 60px;
+	}
+}
+.header-twitter {
+	background-color: #55acee;
+	color: transparentize(#55acee, 1);
+	@include scaled-image('footer-twitter.png', 32px);
+
+	&:hover,
+	&:focus { background-color: lighten(#55acee, 5%); }
+
+	@media (min-width: 768px) {
+		@include scaled-image('footer-twitter.png', 36px);
+	}
+}
+.header-facebook {
+	background-color: #3b5998;
+	color: transparentize(#3b5998, 1);
+	@include scaled-image('footer-facebook.png', 32px);
+
+	&:hover,
+	&:focus { background-color: lighten(#3b5998, 5%); }
+
+	@media (min-width: 768px) {
+		@include scaled-image('footer-facebook.png', 36px);
 	}
 }
 
@@ -149,33 +243,29 @@
 	}
 }
 
-#header-social {
-	@include transition(opacity .125s ease);
-	display: none;
-	float: right;
-	height: 60px;
-	margin: 0 40px 0 0;
-	padding: 20px 0 20px;
-	opacity: 0;
+// #header-social {
+// 	@include transition(opacity .125s ease);
+// 	display: inline-block;
+// 	float: right;
+// 	height: 60px;
+// 	margin: 0 40px 0 0;
+// 	padding: 20px 0 20px;
 
-	&.js-visible { opacity: .5; }
-	&:hover { opacity: 1; }
+// 	&.js-visible { opacity: .5; }
 
-	@media (min-width: 1024px) { display: inline-block; }
-}
-#twitter-widget-0 {
-	@include transition(opacity .25s ease);
-	margin: 0 !important;
-	opacity: 0;
+// 	@media (max-width: 1024px) {
+// 		height: 56px;
+// 		padding: 18px 0;
+// 		margin-right: 0;
+// 	}
+// }
+// #twitter-widget-0 {
+// 	@include transition(opacity .25s ease);
+// 	margin: 0 !important;
+// }
+// .fb-like,
+// .fb-share-button {
+// 	margin: 0 0 0 10px !important;
 
-	&[data-twttr-rendered=true] {
-		opacity: 1;
-	}
-}
-.fb-like,
-.fb-share-button {
-	margin: 0 0 0 10px !important;
-
-	& > span { float: left; }
-}
-// .fb-share-button { margin-left: -10px !important; }
+// 	& > span { float: left; }
+// }
