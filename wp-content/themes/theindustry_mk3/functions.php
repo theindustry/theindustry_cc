@@ -149,7 +149,7 @@
 
 		if( is_single() ) {
 			global $post;
-			$category = get_the_category($post->ID)[0];
+			// $category = get_the_category($post->ID)[0];
 
 			if( get_field('subject') ) {
 				$title = get_field('subject');
@@ -164,7 +164,8 @@
 				$title = get_the_title();
 			}
 
-			echo '<li class="header-breadcrumbs-item"><a href="'.get_category_link($category->term_id).'">'.$category->name.'</a></li>';
+			// echo '<li class="header-breadcrumbs-item"><a href="'.get_category_link($category->term_id).'">'.$category->name.'</a></li>';
+			echo '<li class="header-breadcrumbs-item"><a href="'.$post->category['permalink'].'">'.$post->category['name'].'</a></li>';
 			echo '<li class="header-breadcrumbs-item">'.$title.'</li>';
 		}
 
