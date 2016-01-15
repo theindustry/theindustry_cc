@@ -36,8 +36,8 @@
 			$wordFacebook = 'Like';
 		}
 		?>
-		<a href="#" class="header-social-item header-twitter"><?php echo $wordTwitter; ?></a>
-		<a href="#" class="header-social-item header-facebook"><?php echo $wordFacebook; ?></a>
+		<a href="<?php echo get_twitter_link(); ?>" target="_blank" class="header-social-item header-twitter"><?php echo $wordTwitter; ?></a>
+		<a href="<?php echo get_facebook_link(); ?>" target="_blank" class="header-social-item header-facebook"><?php echo $wordFacebook; ?></a>
 	</div>
 
 	<button id="header-search-trigger">Search</button>

@@ -225,6 +225,8 @@
 			$link = $GLOBALS['site_url'];
 			$shortlink = $GLOBALS['site_url'];
 			$title = 'The Industry';
+
+			return 'https://twitter.com/industry';
 		}
 
 		$link = urlencode($link);
@@ -248,11 +250,13 @@
 		if( is_single() ) {
 			$link = get_permalink();
 			$link = urlencode( $link );
-			$result = 'http://www.facebook.com/plugins/like.php?href=' . $link . '&action=like';
+			// $result = 'http://www.facebook.com/plugins/like.php?href=' . $link . '&action=like';
+			$result = 'http://www.facebook.com/sharer.php?u=' . $link;
 
 		} else {
 			$link = urlencode( 'https://www.facebook.com/theindustry.cc' );
 			$result = 'http://www.facebook.com/plugins/like.php?href=' . $link . '&action=like';
+			return 'https://www.facebook.com/theindustry.cc';
 		}
 
 		return $result;
