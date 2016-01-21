@@ -59,7 +59,7 @@ blockquote {
 #content blockquote a {
 	&:before {
 		@include transition(all .125s ease);
-		@include transform(translate3d(0, 0, 0));
+		@include transform(translate3d(0, -3px, 0));
 		border-bottom: 1px #ccc solid;
 		bottom: -2px;
 		content: '';
