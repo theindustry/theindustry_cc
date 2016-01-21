@@ -56,6 +56,22 @@ blockquote {
 	padding: 0 0 0 2em;
 }
 
+#content blockquote a {
+	&:before {
+		@include transition(all .125s ease);
+		@include transform(translate3d(0, 0, 0));
+		border-bottom: 1px #ccc solid;
+		bottom: -2px;
+		content: '';
+		display: inline-block;
+		left: 0;
+		opacity: 1;
+		position: absolute;
+		pointer-events: none;
+		right: 0;
+	}
+}
+
 #content ul,
 #content ol {
 	margin-left: 2em;

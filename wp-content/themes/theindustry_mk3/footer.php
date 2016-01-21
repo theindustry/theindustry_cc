@@ -14,7 +14,10 @@
 
 	<script>
 	var myElement = document.getElementById('header');
-	var headroom  = new Headroom(myElement);
+	var headroom  = new Headroom(myElement, {
+		// tolerance: 25,
+		// offset: 320
+	});
 	headroom.init(); 
 	</script>
 
