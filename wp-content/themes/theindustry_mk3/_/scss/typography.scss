@@ -56,8 +56,7 @@ blockquote {
 	padding: 0 0 0 2em;
 }
 
-#content blockquote a,
-#content .wp-caption .wp-caption-text a {
+#content blockquote a {
 	&:before {
 		@include transition(all .125s ease);
 		@include transform(translate3d(0, -3px, 0));
@@ -71,6 +70,12 @@ blockquote {
 		pointer-events: none;
 		right: 0;
 	}
+}
+
+#content .wp-caption .wp-caption-text a {
+	text-decoration: underline !important;
+
+	&:before { display: none !important; }
 }
 
 #content ul,
