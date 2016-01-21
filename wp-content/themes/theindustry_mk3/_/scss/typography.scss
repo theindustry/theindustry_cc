@@ -56,7 +56,8 @@ blockquote {
 	padding: 0 0 0 2em;
 }
 
-#content blockquote a {
+#content blockquote a,
+#content .wp-caption .wp-caption-text a {
 	&:before {
 		@include transition(all .125s ease);
 		@include transform(translate3d(0, -3px, 0));
